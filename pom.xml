@@ -9,7 +9,6 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<selenium-n-driver.version>2.53.0</selenium-n-driver.version>
 		<main.class>au.edu.rmit.its.App</main.class>
 		<slf4j.version>1.7.5</slf4j.version>
 	</properties>

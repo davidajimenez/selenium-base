@@ -41,7 +41,7 @@ public class AppTest {
 	public void testLogin() throws InterruptedException {
 
 		driver.get(myResources.getString("website.url"));
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 
 		WebElement headerTitle = driver.findElement(By.xpath("//*[@id='appName']"));
 		String headingTitleText = headerTitle.getText();
