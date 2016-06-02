@@ -61,7 +61,7 @@ public class AppTest extends BaseTest {
 		driver.get(myResources.getString("website.url"));
 		WebElement footer = driver.findElement(By.xpath("//*[@id='footerContent']/p"));
 		String footerText = footer.getText();
-
+ 
 		assertTrue(footerText.contains("2013"));
 	}
 	
