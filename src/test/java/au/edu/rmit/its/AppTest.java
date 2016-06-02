@@ -19,13 +19,13 @@ public class AppTest {
 	private ResourceBundle myResources = ResourceBundle.getBundle("ResourceBundle");
 	private WebDriver driver;
 	private final static Logger logger = Logger.getLogger(AppTest.class);
-
+	private Browser browser = Browser.CHROME;
 	
 
 	@Before
 	public void beforeTest() throws Exception {
 		try {
-			driver = Setup.BrowserSetup(myResources.getString("driver.browser"), driver);
+			driver = Setup.BrowserSetup(browser, driver);
 		} catch (Exception e) {
 			logger.info("failed at setting up webdriver");
 			e.printStackTrace();

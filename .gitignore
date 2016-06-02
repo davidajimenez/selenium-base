@@ -1,4 +1,4 @@
+/target/
 /.classpath
 /.project
-/log4j-application.log
-/target/
+/.settings
