@@ -2,22 +2,18 @@ package au.edu.rmit.its;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ResourceBundle;
-
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest {
+public class AppTest extends BaseTest {
 
-	private ResourceBundle myResources = ResourceBundle.getBundle("ResourceBundle");
-	private WebDriver driver;
+	
 	private final static Logger logger = Logger.getLogger(AppTest.class);
 	private Browser browser = Browser.CHROME;
 	
@@ -38,7 +34,7 @@ public class AppTest {
 	}
 
 	@Test
-	public void testLogin() throws InterruptedException {
+	public void testLoginInvalid() throws InterruptedException {
 
 		driver.get(myResources.getString("website.url"));
 		//driver.manage().window().maximize();
@@ -59,4 +55,15 @@ public class AppTest {
 
 		assertTrue(message.getText().contains("ID or password invalid"));
 	}
+	
+	@Test
+	public void testCopyrightValue() {
+		driver.get(myResources.getString("website.url"));
+		WebElement footer = driver.findElement(By.xpath("//*[@id='footerContent']/p"));
+		String footerText = footer.getText();
+
+		assertTrue(footerText.contains("2013"));
+	}
+	
+	
 }
